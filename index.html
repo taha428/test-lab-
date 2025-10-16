@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JS Exercises Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h1>JavaScript Exercises Dashboard</h1>
+<div class="menu">
+  <button onclick="showSection('cart')">Exercise 1: Add to Cart</button>
+  <button onclick="showSection('chat')">Exercise 2: Chat App</button>
+  <button onclick="showSection('form')">Exercise 3: Form Builder</button>
+  <button onclick="showSection('expense')">Exercise 4: Expense Tracker</button>
+</div>
+
+<!-- 🛒 Add To Cart Section -->
+<div id="cart" class="section">
+  <h2>🛍 Add To Cart System</h2>
+  <div class="products" id="product-list"></div>
+  <table class="cart-table" id="cart-table">
+    <thead>
+      <tr><th>Product</th><th>Price</th><th>Quantity</th><th>Total</th><th>Remove</th></tr>
+    </thead>
+    <tbody id="cart-body"></tbody>
+  </table>
+  <h3 id="cart-total">Total: $0</h3>
+</div>
+
+<!-- 💬 Chat Section -->
+<div id="chat" class="section">
+  <h2>💬 Chat Interface</h2>
+  <div id="chat-box"></div>
+  <div style="text-align:center; margin-top:10px;">
+    <input type="text" id="chat-input" placeholder="Type a message...">
+    <button onclick="sendMessage()">Send</button>
+  </div>
+</div>
+
+<!-- 🧩 Form Builder Section -->
+<div id="form" class="section">
+  <h2>🧩 Dynamic Form Builder</h2>
+  <div id="form-builder">
+    <button onclick="addField('text')">Add Text Field</button>
+    <button onclick="addField('email')">Add Email Field</button>
+    <button onclick="addField('dropdown')">Add Dropdown</button>
+    <form id="dynamic-form"></form>
+    <button onclick="validateForm()">Submit</button>
+  </div>
+</div>
+
+<!-- 💰 Expense Tracker -->
+<div id="expense" class="section">
+  <h2>💰 Expense Tracker Dashboard</h2>
+  <form id="expense-form">
+    <input type="text" id="desc" placeholder="Description">
+    <input type="number" id="amount" placeholder="Amount">
+    <input type="text" id="category" placeholder="Category">
+    <button type="button" onclick="addExpense()">Add</button>
+  </form>
+  <table id="expense-table">
+    <thead>
+      <tr><th>Description</th><th>Amount</th><th>Category</th><th>Delete</th></tr>
+    </thead>
+    <tbody id="expense-body"></tbody>
+  </table>
+  <h3 id="total-expense">Total: $0</h3>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
